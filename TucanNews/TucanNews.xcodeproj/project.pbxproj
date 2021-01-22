@@ -3,27 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		EE8EB21F25BB3EC400C79926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB21E25BB3EC400C79926 /* AppDelegate.swift */; };
-		EE8EB22125BB3EC400C79926 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB22025BB3EC400C79926 /* SceneDelegate.swift */; };
-		EE8EB22325BB3EC400C79926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB22225BB3EC400C79926 /* ViewController.swift */; };
-		EE8EB22625BB3EC400C79926 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE8EB22425BB3EC400C79926 /* Main.storyboard */; };
 		EE8EB22825BB3EC600C79926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE8EB22725BB3EC600C79926 /* Assets.xcassets */; };
 		EE8EB22B25BB3EC600C79926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE8EB22925BB3EC600C79926 /* LaunchScreen.storyboard */; };
+		EE8EB23725BB3FA500C79926 /* RambaHamba in Frameworks */ = {isa = PBXBuildFile; productRef = EE8EB23625BB3FA500C79926 /* RambaHamba */; };
+		EE8EB23D25BB408000C79926 /* NewsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB23C25BB408000C79926 /* NewsListController.swift */; };
+		EE8EB24125BB408A00C79926 /* NewsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB24025BB408A00C79926 /* NewsDetailsController.swift */; };
+		EE8EB24725BB40B400C79926 /* NewsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB24625BB40B400C79926 /* NewsObject.swift */; };
+		EE8EB24B25BB40BF00C79926 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB24A25BB40BF00C79926 /* NetworkManager.swift */; };
+		EE8EB25525BB412B00C79926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB25425BB412B00C79926 /* ViewController.swift */; };
+		EE8EB25925BB412F00C79926 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB25825BB412F00C79926 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE8EB21B25BB3EC400C79926 /* TucanNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TucanNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8EB21E25BB3EC400C79926 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE8EB22025BB3EC400C79926 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE8EB22225BB3EC400C79926 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EE8EB22525BB3EC400C79926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE8EB22725BB3EC600C79926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE8EB22A25BB3EC600C79926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE8EB22C25BB3EC600C79926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE8EB23C25BB408000C79926 /* NewsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListController.swift; sourceTree = "<group>"; };
+		EE8EB24025BB408A00C79926 /* NewsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsController.swift; sourceTree = "<group>"; };
+		EE8EB24625BB40B400C79926 /* NewsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsObject.swift; sourceTree = "<group>"; };
+		EE8EB24A25BB40BF00C79926 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EE8EB25425BB412B00C79926 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE8EB25825BB412F00C79926 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8EB23725BB3FA500C79926 /* RambaHamba in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +64,82 @@
 		EE8EB21D25BB3EC400C79926 /* TucanNews */ = {
 			isa = PBXGroup;
 			children = (
-				EE8EB21E25BB3EC400C79926 /* AppDelegate.swift */,
-				EE8EB22025BB3EC400C79926 /* SceneDelegate.swift */,
-				EE8EB22225BB3EC400C79926 /* ViewController.swift */,
-				EE8EB22425BB3EC400C79926 /* Main.storyboard */,
-				EE8EB22725BB3EC600C79926 /* Assets.xcassets */,
-				EE8EB22925BB3EC600C79926 /* LaunchScreen.storyboard */,
-				EE8EB22C25BB3EC600C79926 /* Info.plist */,
+				EE8EB25325BB411F00C79926 /* Overrides */,
+				EE8EB24F25BB40D300C79926 /* App */,
+				EE8EB24325BB409000C79926 /* Datahandler */,
+				EE8EB23B25BB406E00C79926 /* Screens */,
+				EE8EB24E25BB40CD00C79926 /* Resources */,
+				EE8EB24D25BB40C800C79926 /* Settings */,
 			);
 			path = TucanNews;
+			sourceTree = "<group>";
+		};
+		EE8EB23B25BB406E00C79926 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB23C25BB408000C79926 /* NewsListController.swift */,
+				EE8EB24025BB408A00C79926 /* NewsDetailsController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EE8EB24325BB409000C79926 /* Datahandler */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB24525BB40A100C79926 /* Network */,
+				EE8EB24425BB409800C79926 /* Models */,
+			);
+			path = Datahandler;
+			sourceTree = "<group>";
+		};
+		EE8EB24425BB409800C79926 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB24625BB40B400C79926 /* NewsObject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE8EB24525BB40A100C79926 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB24A25BB40BF00C79926 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EE8EB24D25BB40C800C79926 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB22C25BB3EC600C79926 /* Info.plist */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		EE8EB24E25BB40CD00C79926 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB22725BB3EC600C79926 /* Assets.xcassets */,
+				EE8EB22925BB3EC600C79926 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE8EB24F25BB40D300C79926 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB21E25BB3EC400C79926 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EE8EB25325BB411F00C79926 /* Overrides */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB25425BB412B00C79926 /* ViewController.swift */,
+				EE8EB25825BB412F00C79926 /* View.swift */,
+			);
+			path = Overrides;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +158,9 @@
 			dependencies = (
 			);
 			name = TucanNews;
+			packageProductDependencies = (
+				EE8EB23625BB3FA500C79926 /* RambaHamba */,
+			);
 			productName = TucanNews;
 			productReference = EE8EB21B25BB3EC400C79926 /* TucanNews.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +188,9 @@
 				Base,
 			);
 			mainGroup = EE8EB21225BB3EC400C79926;
+			packageReferences = (
+				EE8EB23525BB3FA500C79926 /* XCRemoteSwiftPackageReference "rambahamba" */,
+			);
 			productRefGroup = EE8EB21C25BB3EC400C79926 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +207,6 @@
 			files = (
 				EE8EB22B25BB3EC600C79926 /* LaunchScreen.storyboard in Resources */,
 				EE8EB22825BB3EC600C79926 /* Assets.xcassets in Resources */,
-				EE8EB22625BB3EC400C79926 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +217,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE8EB22325BB3EC400C79926 /* ViewController.swift in Sources */,
+				EE8EB25525BB412B00C79926 /* ViewController.swift in Sources */,
+				EE8EB23D25BB408000C79926 /* NewsListController.swift in Sources */,
+				EE8EB24125BB408A00C79926 /* NewsDetailsController.swift in Sources */,
+				EE8EB24B25BB40BF00C79926 /* NetworkManager.swift in Sources */,
 				EE8EB21F25BB3EC400C79926 /* AppDelegate.swift in Sources */,
-				EE8EB22125BB3EC400C79926 /* SceneDelegate.swift in Sources */,
+				EE8EB25925BB412F00C79926 /* View.swift in Sources */,
+				EE8EB24725BB40B400C79926 /* NewsObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EE8EB22425BB3EC400C79926 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE8EB22525BB3EC400C79926 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EE8EB22925BB3EC600C79926 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +364,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DLF37G2J3;
-				INFOPLIST_FILE = TucanNews/Info.plist;
+				INFOPLIST_FILE = TucanNews/Settings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +383,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DLF37G2J3;
-				INFOPLIST_FILE = TucanNews/Info.plist;
+				INFOPLIST_FILE = TucanNews/Settings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,6 +417,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE8EB23525BB3FA500C79926 /* XCRemoteSwiftPackageReference "rambahamba" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/obozhdi/rambahamba.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE8EB23625BB3FA500C79926 /* RambaHamba */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE8EB23525BB3FA500C79926 /* XCRemoteSwiftPackageReference "rambahamba" */;
+			productName = RambaHamba;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE8EB21325BB3EC400C79926 /* Project object */;
 }
