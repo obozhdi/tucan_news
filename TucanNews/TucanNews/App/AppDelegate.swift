@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.backgroundColor = .red
-    window?.rootViewController = UIViewController()
+    window?.rootViewController = UINavigationController(rootViewController: NewsListController())
     window?.makeKeyAndVisible()
     
     return true

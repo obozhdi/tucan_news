@@ -15,6 +15,8 @@
 		EE8EB24125BB408A00C79926 /* NewsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB24025BB408A00C79926 /* NewsDetailsController.swift */; };
 		EE8EB24725BB40B400C79926 /* NewsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB24625BB40B400C79926 /* NewsObject.swift */; };
 		EE8EB24B25BB40BF00C79926 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB24A25BB40BF00C79926 /* NetworkManager.swift */; };
+		EE8EB25525BB412B00C79926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB25425BB412B00C79926 /* ViewController.swift */; };
+		EE8EB25925BB412F00C79926 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB25825BB412F00C79926 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		EE8EB24025BB408A00C79926 /* NewsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsController.swift; sourceTree = "<group>"; };
 		EE8EB24625BB40B400C79926 /* NewsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsObject.swift; sourceTree = "<group>"; };
 		EE8EB24A25BB40BF00C79926 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EE8EB25425BB412B00C79926 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE8EB25825BB412F00C79926 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		EE8EB21D25BB3EC400C79926 /* TucanNews */ = {
 			isa = PBXGroup;
 			children = (
+				EE8EB25325BB411F00C79926 /* Overrides */,
 				EE8EB24F25BB40D300C79926 /* App */,
 				EE8EB24325BB409000C79926 /* Datahandler */,
 				EE8EB23B25BB406E00C79926 /* Screens */,
@@ -126,6 +131,15 @@
 				EE8EB21E25BB3EC400C79926 /* AppDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		EE8EB25325BB411F00C79926 /* Overrides */ = {
+			isa = PBXGroup;
+			children = (
+				EE8EB25425BB412B00C79926 /* ViewController.swift */,
+				EE8EB25825BB412F00C79926 /* View.swift */,
+			);
+			path = Overrides;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8EB25525BB412B00C79926 /* ViewController.swift in Sources */,
 				EE8EB23D25BB408000C79926 /* NewsListController.swift in Sources */,
 				EE8EB24125BB408A00C79926 /* NewsDetailsController.swift in Sources */,
 				EE8EB24B25BB40BF00C79926 /* NetworkManager.swift in Sources */,
 				EE8EB21F25BB3EC400C79926 /* AppDelegate.swift in Sources */,
+				EE8EB25925BB412F00C79926 /* View.swift in Sources */,
 				EE8EB24725BB40B400C79926 /* NewsObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
