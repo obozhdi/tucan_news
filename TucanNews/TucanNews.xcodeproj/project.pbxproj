@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		EE8EB22625BB3EC400C79926 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE8EB22425BB3EC400C79926 /* Main.storyboard */; };
 		EE8EB22825BB3EC600C79926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE8EB22725BB3EC600C79926 /* Assets.xcassets */; };
 		EE8EB22B25BB3EC600C79926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE8EB22925BB3EC600C79926 /* LaunchScreen.storyboard */; };
+		EE8EB23725BB3FA500C79926 /* RambaHamba in Frameworks */ = {isa = PBXBuildFile; productRef = EE8EB23625BB3FA500C79926 /* RambaHamba */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8EB23725BB3FA500C79926 /* RambaHamba in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = TucanNews;
+			packageProductDependencies = (
+				EE8EB23625BB3FA500C79926 /* RambaHamba */,
+			);
 			productName = TucanNews;
 			productReference = EE8EB21B25BB3EC400C79926 /* TucanNews.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +115,9 @@
 				Base,
 			);
 			mainGroup = EE8EB21225BB3EC400C79926;
+			packageReferences = (
+				EE8EB23525BB3FA500C79926 /* XCRemoteSwiftPackageReference "rambahamba" */,
+			);
 			productRefGroup = EE8EB21C25BB3EC400C79926 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +349,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE8EB23525BB3FA500C79926 /* XCRemoteSwiftPackageReference "rambahamba" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/obozhdi/rambahamba.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE8EB23625BB3FA500C79926 /* RambaHamba */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE8EB23525BB3FA500C79926 /* XCRemoteSwiftPackageReference "rambahamba" */;
+			productName = RambaHamba;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE8EB21325BB3EC400C79926 /* Project object */;
 }
