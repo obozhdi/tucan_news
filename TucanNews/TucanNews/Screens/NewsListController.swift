@@ -9,26 +9,18 @@ import UIKit
 
 final class NewsListController: ViewController {
   
-  private var tableView = UITableView()
+  private let tableView = UITableView()
+  private var tableData: [NewsObject] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setupDataSources()
     setupSubviews()
+    updateNewsList()
   }
   
-}
-
-private extension NewsListController {
-  
-  private func setupDataSources() {
-    
-  }
-  
-  private func setData() {
-    
-    tableView.reloadData()
+  private func updateNewsList() {
+    tableData = NetworkManager.getNews()
   }
   
 }
@@ -50,15 +42,12 @@ private extension NewsListController {
 extension NewsListController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
-  }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 44
+    return tableData.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueCell(NewsListCell.self, withIdentifier: NewsListCell.reuseIdentifier, for: indexPath)
+    cell.setData(with: tableData[indexPath.row])
     return cell
   }
   
@@ -67,7 +56,9 @@ extension NewsListController: UITableViewDelegate, UITableViewDataSource {
 final class NewsListCell: UITableViewCell {
   
   private let cellImageView = UIImageView()
-  private let cellLabel = UILabel()
+  private let cellTitleLabel = UILabel()
+  private let cellDateLabel = UILabel()
+  private let cellTeaserLabel = UILabel()
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -85,15 +76,18 @@ final class NewsListCell: UITableViewCell {
       $0.backgroundColor = .lightGray
     }
     
-    cellLabel.add(to: contentView).do {
+    cellTitleLabel.add(to: contentView).do {
       $0.leftToRight(of: cellImageView, offset: 16)
       $0.centerYToSuperview()
       $0.rightToSuperview(offset: -16)
     }
   }
   
-  func setData() {
-    
+  func setData(with object: NewsObject) {
+    cellImageView.image = object.image
+    cellTitleLabel.text = object.title
+    cellDateLabel.text = String(describing: object.date)
+    cellTeaserLabel.text = object.teaser
   }
   
 }
