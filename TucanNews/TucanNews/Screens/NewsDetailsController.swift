@@ -39,9 +39,38 @@ final class NewsDetailsController: ViewController {
     setupSubviews()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setupNavbarOnShow()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    setupNavbarOnHide()
+  }
+  
 }
 
 private extension NewsDetailsController {
+  
+  private func setupNavbarOnShow() {
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.isTranslucent = true
+    navigationController?.view.backgroundColor = .clear
+    title = "Интересная Новость"
+    
+    navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+      title: "", style: .plain, target: nil, action: nil)
+  }
+  
+  private func setupNavbarOnHide() {
+    let navBar = self.navigationController?.navigationBar
+    navBar?.barTintColor = UIColor.black
+    navBar?.tintColor = UIColor.white
+    navBar?.isTranslucent = false
+    navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+  }
   
   private func setupSubviews() {
     backgroundImageView.add(to: view).do {

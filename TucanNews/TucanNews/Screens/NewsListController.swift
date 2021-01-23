@@ -34,7 +34,7 @@ private extension NewsListController {
     navBar?.tintColor = UIColor.white
     navBar?.isTranslucent = false
     navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-    title = "Tucan News Report"
+    title = "Туканные Новости"
   }
   
   private func setupSubviews() {
