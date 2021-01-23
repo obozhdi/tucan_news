@@ -17,6 +17,7 @@ final class NewsListController: ViewController {
     
     setupSubviews()
     updateNewsList()
+    setupNavbar()
   }
   
   private func updateNewsList() {
@@ -26,6 +27,15 @@ final class NewsListController: ViewController {
 }
 
 private extension NewsListController {
+  
+  private func setupNavbar() {
+    let navBar = self.navigationController?.navigationBar
+    navBar?.barTintColor = UIColor.black
+    navBar?.tintColor = UIColor.white
+    navBar?.isTranslucent = false
+    navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    title = "Tucan News Report"
+  }
   
   private func setupSubviews() {
     tableView.add(to: view).do {
