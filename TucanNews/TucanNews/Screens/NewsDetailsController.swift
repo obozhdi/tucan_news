@@ -13,11 +13,14 @@ final class NewsDetailsController: ViewController {
   
   private let backgroundImageView = UIImageView()
   private let backgroundBlurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+  private let topBarBlurView = UIVisualEffectView(effect: nil)
   private let imageView = UIImageView()
   private let titleLabel = UILabel()
   private let dateLabel = UILabel()
   private let textLabel = UILabel()
   
+  private var shouldAnimateTopbarAppearance = true
+  private var viewDidAppearOnScreen = false
   
   init(with newsObject: NewsObject) {
     super.init(nibName: nil, bundle: nil)
@@ -47,6 +50,11 @@ final class NewsDetailsController: ViewController {
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     setupNavbarOnHide()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    viewDidAppearOnScreen = true
   }
   
 }
@@ -90,6 +98,7 @@ private extension NewsDetailsController {
       $0.rightToSuperview(offset: -14)
       $0.bottomToSuperview()
       $0.showsVerticalScrollIndicator = false
+      $0.delegate = self
       
       UIView().add(to: $0).do {
         $0.edgesToSuperview()
@@ -140,6 +149,58 @@ private extension NewsDetailsController {
           textLabel.text = newsObject?.text
         }
       }
+    }
+    
+    topBarBlurView.add(to: view).do {
+      $0.topToSuperview()
+      $0.leftToSuperview()
+      $0.rightToSuperview()
+      $0.height(Display.navbarSize)
+    }
+  }
+  
+  private func showTopBar() {
+    if shouldAnimateTopbarAppearance && viewDidAppearOnScreen {
+      UIView.animate(withDuration: 0.25) {
+        self.shouldAnimateTopbarAppearance = false
+        self.topBarBlurView.effect = UIBlurEffect(style: .dark)
+        self.view.layoutIfNeeded()
+      } completion: { completed in
+        if completed {
+          self.shouldAnimateTopbarAppearance = true
+        }
+      }
+    }
+  }
+  
+  private func hideTopBar() {
+    if shouldAnimateTopbarAppearance && viewDidAppearOnScreen {
+      UIView.animate(withDuration: 0.25) {
+        self.shouldAnimateTopbarAppearance = false
+        self.topBarBlurView.effect = nil
+        self.view.layoutIfNeeded()
+      } completion: { completed in
+        if completed {
+          self.shouldAnimateTopbarAppearance = true
+        }
+      }
+    }
+  }
+  
+}
+
+extension NewsDetailsController: UIScrollViewDelegate {
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let offsetY = scrollView.contentOffset.y
+    print(offsetY)
+    
+    if offsetY > -64 {
+      print("SHOW BAR")
+      showTopBar()
+    } else {
+      print("HIDE BAR")
+      hideTopBar()
     }
   }
   
