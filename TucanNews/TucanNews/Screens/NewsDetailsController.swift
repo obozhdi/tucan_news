@@ -11,6 +11,14 @@ final class NewsDetailsController: ViewController {
   
   private var newsObject: NewsObject?
   
+  private let backgroundImageView = UIImageView()
+  private let backgroundBlurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+  private let imageView = UIImageView()
+  private let titleLabel = UILabel()
+  private let dateLabel = UILabel()
+  private let textLabel = UILabel()
+  
+  
   init(with newsObject: NewsObject) {
     super.init(nibName: nil, bundle: nil)
     self.newsObject = newsObject
@@ -36,7 +44,74 @@ final class NewsDetailsController: ViewController {
 private extension NewsDetailsController {
   
   private func setupSubviews() {
-    view.backgroundColor = .red
+    backgroundImageView.add(to: view).do {
+      $0.edgesToSuperview()
+      $0.contentMode = .scaleAspectFill
+      $0.image = newsObject?.image
+      $0.clipsToBounds = true
+    }
+    
+    backgroundBlurView.add(to: view).do {
+      $0.edgesToSuperview()
+    }
+    
+    UIScrollView().add(to: view).do {
+      $0.topToSuperview()
+      $0.leftToSuperview(offset: 14)
+      $0.rightToSuperview(offset: -14)
+      $0.bottomToSuperview()
+      $0.showsVerticalScrollIndicator = false
+      
+      UIView().add(to: $0).do {
+        $0.edgesToSuperview()
+        $0.width(Display.width - 28)
+        
+        imageView.add(to: $0).do {
+          $0.leftToSuperview()
+          $0.topToSuperview()
+          $0.rightToSuperview()
+          $0.height(190)
+          $0.contentMode = .scaleAspectFill
+          $0.clipsToBounds = true
+          $0.layer.shadowColor = UIColor.black.cgColor
+          $0.layer.shadowOpacity = 0.2
+          $0.layer.shadowOffset = .zero
+          $0.layer.shadowRadius = 4
+          $0.image = newsObject?.image
+        }
+        
+        titleLabel.add(to: $0).do {
+          $0.topToBottom(of: imageView, offset: 14)
+          $0.leftToSuperview()
+          $0.rightToSuperview()
+          $0.numberOfLines = 0
+          $0.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+          $0.textColor = .white
+          $0.text = newsObject?.title
+        }
+        
+        dateLabel.add(to: $0).do {
+          $0.topToBottom(of: titleLabel, offset: 8)
+          $0.leftToSuperview()
+          $0.rightToSuperview()
+          $0.numberOfLines = 1
+          $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+          $0.textColor = UIColor.white.withAlphaComponent(0.4)
+          $0.text = String(describing: newsObject?.date)
+        }
+        
+        textLabel.add(to: $0).do {
+          $0.topToBottom(of: dateLabel, offset: 8)
+          $0.leftToSuperview()
+          $0.rightToSuperview()
+          $0.numberOfLines = 0
+          $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+          $0.textColor = UIColor.white.withAlphaComponent(0.7)
+          $0.bottomToSuperview(offset: -20)
+          textLabel.text = newsObject?.text
+        }
+      }
+    }
   }
   
 }
