@@ -135,7 +135,7 @@ private extension NewsDetailsController {
           $0.numberOfLines = 1
           $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
           $0.textColor = UIColor.white.withAlphaComponent(0.4)
-          $0.text = String(describing: newsObject?.date)
+          $0.text = Day.formatDate(date: newsObject?.date).uppercased()
         }
         
         textLabel.add(to: $0).do {

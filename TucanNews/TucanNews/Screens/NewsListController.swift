@@ -141,7 +141,7 @@ final class NewsListCell: UITableViewCell {
   func setData(with object: NewsObject) {
     cellImageView.image = object.image
     cellTitleLabel.text = object.title
-    cellDateLabel.text = String(describing: object.date).uppercased()
+    cellDateLabel.text = Day.formatDate(date: object.date).uppercased()
     cellTeaserLabel.text = object.teaser
   }
   
