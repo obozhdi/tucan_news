@@ -19,5 +19,6 @@ struct NewsObject: Codable {
   let date: String
   let teaser: String
   let image: String
+  let text: String
   
 }

@@ -17,8 +17,6 @@
 		EE8EB24725BB40B400C79926 /* NewsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB24625BB40B400C79926 /* NewsObject.swift */; };
 		EE8EB24B25BB40BF00C79926 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB24A25BB40BF00C79926 /* NetworkManager.swift */; };
 		EE8EB25525BB412B00C79926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB25425BB412B00C79926 /* ViewController.swift */; };
-		EE8EB25925BB412F00C79926 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EB25825BB412F00C79926 /* View.swift */; };
-		EEA7879525BC2BBE00DC1550 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7879425BC2BBE00DC1550 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +31,6 @@
 		EE8EB24625BB40B400C79926 /* NewsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsObject.swift; sourceTree = "<group>"; };
 		EE8EB24A25BB40BF00C79926 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EE8EB25425BB412B00C79926 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EE8EB25825BB412F00C79926 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		EEA7879425BC2BBE00DC1550 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +64,6 @@
 		EE8EB21D25BB3EC400C79926 /* TucanNews */ = {
 			isa = PBXGroup;
 			children = (
-				EEA7879325BC2BB000DC1550 /* Formatters */,
 				EE8EB25325BB411F00C79926 /* Overrides */,
 				EE8EB24F25BB40D300C79926 /* App */,
 				EE8EB24325BB409000C79926 /* Datahandler */,
@@ -142,18 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				EE8EB25425BB412B00C79926 /* ViewController.swift */,
-				EE8EB25825BB412F00C79926 /* View.swift */,
 				EE1B232925BD77FE00A5EB64 /* CustomImageView.swift */,
 			);
 			path = Overrides;
-			sourceTree = "<group>";
-		};
-		EEA7879325BC2BB000DC1550 /* Formatters */ = {
-			isa = PBXGroup;
-			children = (
-				EEA7879425BC2BBE00DC1550 /* Date.swift */,
-			);
-			path = Formatters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,10 +220,8 @@
 				EE8EB25525BB412B00C79926 /* ViewController.swift in Sources */,
 				EE8EB23D25BB408000C79926 /* NewsListController.swift in Sources */,
 				EE8EB24125BB408A00C79926 /* NewsDetailsController.swift in Sources */,
-				EEA7879525BC2BBE00DC1550 /* Date.swift in Sources */,
 				EE8EB24B25BB40BF00C79926 /* NetworkManager.swift in Sources */,
 				EE8EB21F25BB3EC400C79926 /* AppDelegate.swift in Sources */,
-				EE8EB25925BB412F00C79926 /* View.swift in Sources */,
 				EE8EB24725BB40B400C79926 /* NewsObject.swift in Sources */,
 				EE1B232A25BD77FE00A5EB64 /* CustomImageView.swift in Sources */,
 			);

@@ -64,7 +64,25 @@ extension NewsListController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let vc = NewsDetailsController(with: tableData[indexPath.row])
+    let tableObject = tableData[indexPath.row]
+    
+    let passedTitle = tableObject.title
+    let passedDate = tableObject.date
+    let passedTeaser = tableObject.teaser
+    let passedText = tableObject.text
+    let passedImage = tableObject.image
+    
+    let passedObject: (image: String,
+                       title: String,
+                       date: String,
+                       teaser: String,
+                       text: String) = (passedImage,
+                                        passedTitle,
+                                        passedDate,
+                                        passedTeaser,
+                                        passedText)
+    
+    let vc = NewsDetailsController(with: passedObject)
     navigationController?.pushViewController(vc)
   }
   
@@ -152,7 +170,6 @@ final class NewsListCell: UITableViewCell {
     cellTitleLabel.text = object.title
     cellDateLabel.text = object.date
     cellTeaserLabel.text = object.teaser
-    
     cellImageView.downloadImageFrom(urlString: object.image, imageMode: .scaleAspectFill)
   }
   

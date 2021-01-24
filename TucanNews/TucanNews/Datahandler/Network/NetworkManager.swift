@@ -23,7 +23,6 @@ class NetworkManager {
       if let data = data {
         if let decodedResp = try? JSONDecoder().decode(NewsResponseObject.self, from: data) {
           DispatchQueue.main.async {
-            print(decodedResp.items)
             self.delegate?.didGetNews(news: decodedResp.items)
           }
         }
