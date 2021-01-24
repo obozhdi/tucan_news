@@ -9,19 +9,20 @@ import UIKit
 
 final class NewsListController: ViewController {
   
+  private var dictionaryImageCache: Dictionary<String, UIImage> = [String:UIImage]()
+  
   private let tableView = UITableView()
   private var tableData: [NewsObject] = []
+  private let networkManager = NetworkManager()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setupSubviews()
-    updateNewsList()
     setupNavbar()
-  }
-  
-  private func updateNewsList() {
-    tableData = NetworkManager.getNews()
+    
+    networkManager.delegate = self
+    networkManager.getNews()
   }
   
 }
@@ -69,9 +70,18 @@ extension NewsListController: UITableViewDelegate, UITableViewDataSource {
   
 }
 
+extension NewsListController: NetworkManagerDelegate {
+  
+  func didGetNews(news: [NewsObject]) {
+    tableData = news
+    tableView.reloadData()
+  }
+  
+}
+
 final class NewsListCell: UITableViewCell {
   
-  private let cellImageView = UIImageView()
+  private let cellImageView = CustomImageView()
   private let cellTitleLabel = UILabel()
   private let cellDateLabel = UILabel()
   private let cellTeaserLabel = UILabel()
@@ -139,10 +149,11 @@ final class NewsListCell: UITableViewCell {
   }
   
   func setData(with object: NewsObject) {
-    cellImageView.image = object.image
     cellTitleLabel.text = object.title
-    cellDateLabel.text = Day.formatDate(date: object.date).uppercased()
+    cellDateLabel.text = object.date
     cellTeaserLabel.text = object.teaser
+    
+    cellImageView.downloadImageFrom(urlString: object.image, imageMode: .scaleAspectFill)
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) { selectionStyle = .none }

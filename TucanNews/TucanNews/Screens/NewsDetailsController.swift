@@ -81,82 +81,82 @@ private extension NewsDetailsController {
   }
   
   private func setupSubviews() {
-    backgroundImageView.add(to: view).do {
-      $0.edgesToSuperview()
-      $0.contentMode = .scaleAspectFill
-      $0.image = newsObject?.image
-      $0.clipsToBounds = true
-    }
-    
-    backgroundBlurView.add(to: view).do {
-      $0.edgesToSuperview()
-    }
-    
-    UIScrollView().add(to: view).do {
-      $0.topToSuperview()
-      $0.leftToSuperview(offset: 14)
-      $0.rightToSuperview(offset: -14)
-      $0.bottomToSuperview()
-      $0.showsVerticalScrollIndicator = false
-      $0.delegate = self
-      
-      UIView().add(to: $0).do {
-        $0.edgesToSuperview()
-        $0.width(Display.width - 28)
-        
-        imageView.add(to: $0).do {
-          $0.leftToSuperview()
-          $0.topToSuperview()
-          $0.rightToSuperview()
-          $0.height(190)
-          $0.contentMode = .scaleAspectFill
-          $0.clipsToBounds = true
-          $0.layer.shadowColor = UIColor.black.cgColor
-          $0.layer.shadowOpacity = 0.2
-          $0.layer.shadowOffset = .zero
-          $0.layer.shadowRadius = 4
-          $0.image = newsObject?.image
-        }
-        
-        titleLabel.add(to: $0).do {
-          $0.topToBottom(of: imageView, offset: 14)
-          $0.leftToSuperview()
-          $0.rightToSuperview()
-          $0.numberOfLines = 0
-          $0.font = UIFont.systemFont(ofSize: 24, weight: .medium)
-          $0.textColor = .white
-          $0.text = newsObject?.title
-        }
-        
-        dateLabel.add(to: $0).do {
-          $0.topToBottom(of: titleLabel, offset: 8)
-          $0.leftToSuperview()
-          $0.rightToSuperview()
-          $0.numberOfLines = 1
-          $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-          $0.textColor = UIColor.white.withAlphaComponent(0.4)
-          $0.text = Day.formatDate(date: newsObject?.date).uppercased()
-        }
-        
-        textLabel.add(to: $0).do {
-          $0.topToBottom(of: dateLabel, offset: 8)
-          $0.leftToSuperview()
-          $0.rightToSuperview()
-          $0.numberOfLines = 0
-          $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-          $0.textColor = UIColor.white.withAlphaComponent(0.7)
-          $0.bottomToSuperview(offset: -20)
-          textLabel.text = newsObject?.text
-        }
-      }
-    }
-    
-    topBarBlurView.add(to: view).do {
-      $0.topToSuperview()
-      $0.leftToSuperview()
-      $0.rightToSuperview()
-      $0.height(Display.navbarSize)
-    }
+//    backgroundImageView.add(to: view).do {
+//      $0.edgesToSuperview()
+//      $0.contentMode = .scaleAspectFill
+//      $0.image = newsObject?.image
+//      $0.clipsToBounds = true
+//    }
+//
+//    backgroundBlurView.add(to: view).do {
+//      $0.edgesToSuperview()
+//    }
+//
+//    UIScrollView().add(to: view).do {
+//      $0.topToSuperview()
+//      $0.leftToSuperview(offset: 14)
+//      $0.rightToSuperview(offset: -14)
+//      $0.bottomToSuperview()
+//      $0.showsVerticalScrollIndicator = false
+//      $0.delegate = self
+//
+//      UIView().add(to: $0).do {
+//        $0.edgesToSuperview()
+//        $0.width(Display.width - 28)
+//
+//        imageView.add(to: $0).do {
+//          $0.leftToSuperview()
+//          $0.topToSuperview()
+//          $0.rightToSuperview()
+//          $0.height(190)
+//          $0.contentMode = .scaleAspectFill
+//          $0.clipsToBounds = true
+//          $0.layer.shadowColor = UIColor.black.cgColor
+//          $0.layer.shadowOpacity = 0.2
+//          $0.layer.shadowOffset = .zero
+//          $0.layer.shadowRadius = 4
+//          $0.image = newsObject?.image
+//        }
+//
+//        titleLabel.add(to: $0).do {
+//          $0.topToBottom(of: imageView, offset: 14)
+//          $0.leftToSuperview()
+//          $0.rightToSuperview()
+//          $0.numberOfLines = 0
+//          $0.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+//          $0.textColor = .white
+//          $0.text = newsObject?.title
+//        }
+//
+//        dateLabel.add(to: $0).do {
+//          $0.topToBottom(of: titleLabel, offset: 8)
+//          $0.leftToSuperview()
+//          $0.rightToSuperview()
+//          $0.numberOfLines = 1
+//          $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+//          $0.textColor = UIColor.white.withAlphaComponent(0.4)
+//          $0.text = Day.formatDate(date: newsObject?.date).uppercased()
+//        }
+//
+//        textLabel.add(to: $0).do {
+//          $0.topToBottom(of: dateLabel, offset: 8)
+//          $0.leftToSuperview()
+//          $0.rightToSuperview()
+//          $0.numberOfLines = 0
+//          $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+//          $0.textColor = UIColor.white.withAlphaComponent(0.7)
+//          $0.bottomToSuperview(offset: -20)
+//          textLabel.text = newsObject?.text
+//        }
+//      }
+//    }
+//
+//    topBarBlurView.add(to: view).do {
+//      $0.topToSuperview()
+//      $0.leftToSuperview()
+//      $0.rightToSuperview()
+//      $0.height(Display.navbarSize)
+//    }
   }
   
   private func showTopBar() {

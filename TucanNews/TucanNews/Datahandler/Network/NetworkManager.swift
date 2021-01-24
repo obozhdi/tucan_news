@@ -7,20 +7,28 @@
 
 import UIKit
 
+protocol NetworkManagerDelegate: class {
+  func didGetNews(news: [NewsObject])
+}
+
 class NetworkManager {
   
-  class func getNews() -> [NewsObject] {
-    var news: [NewsObject] = []
+  weak var delegate: NetworkManagerDelegate?
+  
+  func getNews() {
+    guard let remoteUrl = URL(string: "https://api.npoint.io/c2334a4ce879059ed673") else { return }
+    let request = URLRequest(url: remoteUrl)
     
-    for index in 0...4 {
-      news.append(NewsObject(image: tucans[index] ?? UIImage(),
-                             date: Date(),
-                             title: titles[index],
-                             teaser: teasers[index],
-                             text: texts[index]))
-    }
-    
-    return news
+    URLSession.shared.dataTask(with: request) { data, resp, error in
+      if let data = data {
+        if let decodedResp = try? JSONDecoder().decode(NewsResponseObject.self, from: data) {
+          DispatchQueue.main.async {
+            print(decodedResp.items)
+            self.delegate?.didGetNews(news: decodedResp.items)
+          }
+        }
+      }
+    }.resume()
   }
   
 }
